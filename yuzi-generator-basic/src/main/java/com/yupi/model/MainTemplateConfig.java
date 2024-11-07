@@ -1,9 +1,9 @@
-package com.yupi.config;
+package com.yupi.model;
 
 import lombok.Data;
 
 @Data
-public class MainTemplateConfiguration {
+public class MainTemplateConfig {
     //模板输入作者名
     private String author;
     //设置输出文本

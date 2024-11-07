@@ -3,6 +3,7 @@ package com.yupi.acm;
 import java.util.Scanner;
 
 /**
+ * ygq
  * ACM 输入模板（多数之和）
  */
 public class MainTemplate {

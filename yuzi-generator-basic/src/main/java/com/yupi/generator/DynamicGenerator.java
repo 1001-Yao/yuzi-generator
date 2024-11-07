@@ -1,6 +1,6 @@
 package com.yupi.generator;
 
-import com.yupi.config.MainTemplateConfiguration;
+import com.yupi.model.MainTemplateConfig;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -19,7 +19,7 @@ public class DynamicGenerator {
         String projectPath = System.getProperty("user.dir");
         String inputPath = projectPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl";
         String outputPath = projectPath + File.separator + "MainTemplate.java";
-        MainTemplateConfiguration mainTemplateConfig = new MainTemplateConfiguration();
+        MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
         mainTemplateConfig.setAuthor("yupi");
         mainTemplateConfig.setLoop(false);
         mainTemplateConfig.setOutputText("求和结果：");
@@ -45,13 +45,14 @@ public class DynamicGenerator {
 
         // 设置模板文件使用的字符集
         configuration.setDefaultEncoding("utf-8");
+        configuration.setDefaultEncoding("UTF-8");
 
         // 创建模板对象，加载指定模板
         String templateName = new File(inputPath).getName();
         Template template = configuration.getTemplate(templateName);
 
         // 创建数据模型
-        MainTemplateConfiguration mainTemplateConfig = new MainTemplateConfiguration();
+        MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
         mainTemplateConfig.setAuthor("yupi");
         mainTemplateConfig.setLoop(false);
         mainTemplateConfig.setOutputText("求和结果：");
