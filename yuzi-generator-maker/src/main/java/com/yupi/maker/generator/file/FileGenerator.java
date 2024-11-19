@@ -41,9 +41,9 @@ public class FileGenerator {
 
     public static void main(String[] args) throws TemplateException, IOException {
         DataModel dataModel = new DataModel();
-        dataModel.setAuthor("yupi666");
+        dataModel.mainTemplate.setAuthor("yupi666");
         dataModel.setLoop(true);
-        dataModel.setOutputText("求和结果SUM：");
+        dataModel.mainTemplate.setOutputText("求和结果SUM：");
         doGenerate(dataModel);
     }
 }

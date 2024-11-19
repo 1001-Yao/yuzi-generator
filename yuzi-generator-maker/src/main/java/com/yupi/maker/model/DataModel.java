@@ -8,13 +8,28 @@ import lombok.Data;
 @Data
 public class DataModel {
     /**
-     *
+     *核心模板
      */
-    //模板输入作者名
-    private String author;
-    //设置输出文本
-    private String outputText;
     //是否为循环
-    private boolean loop;
+    private boolean loop=false;
 
+    public boolean needGit=true;
+
+    public MainTemplate mainTemplate = new MainTemplate();
+
+    /**
+     * 用于生成核心模板文件
+     */
+    @Data
+    public static class MainTemplate {
+        /**
+         * 作者注释
+         */
+        public String author = "yupi";
+
+        /**
+         * 输出信息
+         */
+        public String outputText = "sum = ";
+    }
 }
