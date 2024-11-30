@@ -1,7 +1,6 @@
 package com.yupi.maker.generator.file;
 
 
-import com.yupi.maker.model.DataModel;
 import freemarker.template.TemplateException;
 
 import java.io.File;
@@ -39,12 +38,5 @@ public class FileGenerator {
         DynamicFileGenerator.doGenerate(inputDynamicFilePath, outputDynamicFilePath, model);
     }
 
-    public static void main(String[] args) throws TemplateException, IOException {
-        DataModel dataModel = new DataModel();
-        dataModel.mainTemplate.setAuthor("yupi666");
-        dataModel.setLoop(true);
-        dataModel.mainTemplate.setOutputText("求和结果SUM：");
-        doGenerate(dataModel);
-    }
 }
 

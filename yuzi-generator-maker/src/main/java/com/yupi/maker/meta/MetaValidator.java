@@ -4,6 +4,9 @@ import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.StrUtil;
+import com.yupi.maker.meta.enums.FileGenerateTypeEnum;
+import com.yupi.maker.meta.enums.FileTypeEnum;
+import com.yupi.maker.meta.enums.ModelTypeEnum;
 
 import java.nio.file.Paths;
 import java.util.List;
