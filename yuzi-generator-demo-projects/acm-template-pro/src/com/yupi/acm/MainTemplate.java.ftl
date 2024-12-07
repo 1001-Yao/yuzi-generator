@@ -3,7 +3,7 @@ package com.yupi.acm;
 import java.util.Scanner;
 
 /**
-* @author ${author}
+* @author ${mianTemplate.author}
 * ACM 输入模板（多数之和）
 */
 public class MainTemplate {
@@ -29,7 +29,7 @@ public class MainTemplate {
         sum += num;
     }
 
-    System.out.println("${outputText}" + sum);
+    System.out.println("${mainTemplate.outputText}" + sum);
 
 <#if loop>
     }

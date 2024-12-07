@@ -3,6 +3,7 @@ package com.yupi.maker.generator.main;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.io.resource.ClassPathResource;
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.core.util.ZipUtil;
 import com.yupi.maker.generator.JarGenerator;
 import com.yupi.maker.generator.ScriptGenerator;
 import com.yupi.maker.generator.file.DynamicFileGenerator;
@@ -196,6 +197,17 @@ public abstract class GenerateTemplate {
         String sourceCopyDestPath = outputPath + File.separator + ".source";
         FileUtil.copy(sourceRootPath, sourceCopyDestPath, false);
         return sourceCopyDestPath;
+    }
+
+    /**
+     * 制作压缩包
+     * @param outputPath
+     * @return
+     */
+    protected String buildZip(String outputPath){
+        String zipPath=outputPath+".zip";
+        ZipUtil.zip(outputPath,zipPath);
+        return zipPath;
     }
 }
 

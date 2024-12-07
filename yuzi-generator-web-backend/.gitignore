@@ -7,6 +7,9 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+application-local.yml
+yuzi-generator-web-backend.iml
+
 ### STS ###
 .apt_generated
 .classpath
@@ -21,6 +24,8 @@ target/
 *.iws
 *.iml
 *.ipr
+
+
 
 ### NetBeans ###
 /nbproject/private/

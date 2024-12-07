@@ -24,7 +24,6 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -56,7 +55,7 @@ public class GeneratorServiceImpl extends ServiceImpl<GeneratorMapper, Generator
 
         // 创建时，参数不能为空
         if (add) {
-            ThrowUtils.throwIf(StringUtils.isAnyBlank(name,description), ErrorCode.PARAMS_ERROR);
+            ThrowUtils.throwIf(StringUtils.isAnyBlank(name, description), ErrorCode.PARAMS_ERROR);
         }
         // 有参数则校验
         if (StringUtils.isNotBlank(name) && name.length() > 80) {
@@ -98,10 +97,10 @@ public class GeneratorServiceImpl extends ServiceImpl<GeneratorMapper, Generator
         String sortOrder = generatorQueryRequest.getSortOrder();
 
 
-
         // 拼接查询条件
         if (StringUtils.isNotBlank(searchText)) {
-            queryWrapper.and(qw -> qw.like("title", searchText).or().like("content", searchText));
+         //   queryWrapper.like(qw -> qw.like("title", searchText).or().like("content", searchText));
+            queryWrapper.like("name",searchText).or().like("description",searchText);
         }
         queryWrapper.like(StringUtils.isNotBlank(name), "name", name);
         queryWrapper.like(StringUtils.isNotBlank(description), "description", description);

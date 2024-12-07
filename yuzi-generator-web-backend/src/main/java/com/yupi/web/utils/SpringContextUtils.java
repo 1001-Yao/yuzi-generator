@@ -17,11 +17,6 @@ public class SpringContextUtils implements ApplicationContextAware {
 
     private static ApplicationContext applicationContext;
 
-    @Override
-    public void setApplicationContext(@NotNull ApplicationContext applicationContext) throws BeansException {
-        SpringContextUtils.applicationContext = applicationContext;
-    }
-
     /**
      * 通过名称获取 Bean
      *
@@ -53,5 +48,10 @@ public class SpringContextUtils implements ApplicationContextAware {
      */
     public static <T> T getBean(String beanName, Class<T> beanClass) {
         return applicationContext.getBean(beanName, beanClass);
+    }
+
+    @Override
+    public void setApplicationContext(@NotNull ApplicationContext applicationContext) throws BeansException {
+        SpringContextUtils.applicationContext = applicationContext;
     }
 }
