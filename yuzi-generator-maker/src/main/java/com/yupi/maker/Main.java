@@ -10,10 +10,11 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws TemplateException, IOException, InterruptedException {
-       // MainGenerator mainGenerator = new MainGenerator();
+        //MainGenerator mainGenerator = new MainGenerator();
 
         GenerateTemplate generateTemplate = new ZipGenerator();
         generateTemplate.doGenerate();
+       // mainGenerator.doGenerate();
     }
 
 

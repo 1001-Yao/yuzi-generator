@@ -4,7 +4,7 @@
   "basePackage": "com.yupi",
   "version": "1.0",
   "author": "yupi",
-  "createTime": "2024-11-11",
+  "createTime": "20254-1-14",
   "fileConfig": {
     "inputRootPath": ".source/acm-template-pro",
     "outputRootPath": "generated",

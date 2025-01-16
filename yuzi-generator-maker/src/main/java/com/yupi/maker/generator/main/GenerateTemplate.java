@@ -42,14 +42,18 @@ public abstract class GenerateTemplate {
         buildDist(outputPath, sourceCopyDestPath, jarPath, shellOutputFilePath);
     }
 
+
+
 //    /**
 //     * 生成精简版程序
+//     *
 //     * @param outputPath
 //     * @param sourceCopyDestPath
 //     * @param jarPath
 //     * @param shellOutputFilePath
+//     * @return 产物包路径
 //     */
-//    protected void buildDist(String outputPath, String sourceCopyDestPath, String jarPath, String shellOutputFilePath) {
+//    protected String buildDist(String outputPath, String sourceCopyDestPath, String jarPath, String shellOutputFilePath) {
 //        String distOutputPath = outputPath + "-dist";
 //        // 拷贝 jar 包
 //        String targetAbsolutePath = distOutputPath + File.separator + "target";
@@ -58,8 +62,10 @@ public abstract class GenerateTemplate {
 //        FileUtil.copy(jarAbsolutePath, targetAbsolutePath, true);
 //        // 拷贝脚本文件
 //        FileUtil.copy(shellOutputFilePath, distOutputPath, true);
+//        FileUtil.copy(shellOutputFilePath + ".bat", distOutputPath, true);
 //        // 拷贝源模板文件
 //        FileUtil.copy(sourceCopyDestPath, distOutputPath, true);
+//        return distOutputPath;
 //    }
 
     /**
@@ -85,6 +91,9 @@ public abstract class GenerateTemplate {
         FileUtil.copy(sourceCopyDestPath, distOutputPath, true);
         return distOutputPath;
     }
+
+
+
     /**
      * 封装脚本
      *
@@ -158,6 +167,12 @@ public abstract class GenerateTemplate {
         outputFilePath = outputBaseJavaPackagePath + "/cli/command/ListCommand.java";
         DynamicFileGenerator.doGenerate(inputFilePath , outputFilePath, meta);
 
+        // cli.command.JsonGenerateCommand
+        inputFilePath = inputResourcePath + File.separator + "templates/java/cli/command/JsonGenerateCommand.java.ftl";
+        outputFilePath = outputBaseJavaPackagePath + "/cli/command/JsonGenerateCommand.java";
+        DynamicFileGenerator.doGenerate(inputFilePath , outputFilePath, meta);
+
+
         // cli.CommandExecutor
         inputFilePath = inputResourcePath + File.separator + "templates/java/cli/CommandExecutor.java.ftl";
         outputFilePath = outputBaseJavaPackagePath + "/cli/CommandExecutor.java";
@@ -183,6 +198,8 @@ public abstract class GenerateTemplate {
         inputFilePath = inputResourcePath + File.separator + "templates/pom.xml.ftl";
         outputFilePath = outputPath + File.separator + "pom.xml";
         DynamicFileGenerator.doGenerate(inputFilePath , outputFilePath, meta);
+
+
     }
 
     /**

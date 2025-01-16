@@ -40,7 +40,9 @@ export const requestConfig: RequestConfig = {
       if (!data) {
         throw new Error('服务异常');
       }
-      if(data instanceof Blob){
+
+      //文件下载时
+      if (data instanceof Blob) {
         return response;
       }
 
